@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="ejemploMiercoles2.Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <title><%= ConfigurationManager.AppSettings["nombreApp"] %></title>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/sticky-footer.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <%-- Menu --%>
+        <asp:Menu ID="Menu1" Orientation="Horizontal"
+            runat="server"
+             DataSourceID="SiteMapDataSource1"
+            CssClass="navbar navbar-expand-lg navbar-light bg-light"
+            Width="100%"
+            >
+            <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="20px" />
+            <StaticMenuStyle CssClass="navbar-nav mr-auto" />
+            <StaticSelectedStyle CssClass="active" />
+            <DynamicMenuStyle CssClass="dropdown-menu" />
+            <LevelMenuItemStyles>
+                <asp:MenuItemStyle CssClass="nav-item nav-link" />
+                <asp:MenuItemStyle CssClass="nav-item nav-link bg-light" ForeColor="#3333cc" />
+            </LevelMenuItemStyles>
+        </asp:Menu>
+        <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource1"
+             ShowStartingNode="false"></asp:SiteMapDataSource>
+        <ol class="breadcrumb">
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+        </ol>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                    </div>
+            </div>
+         </div>
+    </form>
+    <footer class="footer">
+        <div class="container">
+            <asp:Label ID="lblCopyright" runat="server" 
+                Text="<%$appSettings: copyright  %>"></asp:Label>
+            <br />
+            I Cuatrimestre 2019
+        </div>
+    </footer>
+</body>
+</html>
