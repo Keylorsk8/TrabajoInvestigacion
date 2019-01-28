@@ -16,8 +16,8 @@ namespace WSCategorias
         public List<Categoria> getCategorias()
         {
             List<Categoria> categorias = new List<Categoria>();
-            SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ProductoContext"].ToString());
-            SqlCommand query = new SqlCommand("Select * from Categorias");
+            SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ProductoContext"].ConnectionString);
+            SqlCommand query = new SqlCommand("Select * from Categorias",cn);
             try
             {
                 cn.Open();
