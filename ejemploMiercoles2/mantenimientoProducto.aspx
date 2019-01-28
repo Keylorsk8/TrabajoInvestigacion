@@ -14,7 +14,7 @@
                 <asp:DropDownList ID="ddlCategoria" runat="server" 
                     CssClass="form-control"
                     ItemType="Contexto.Categorias"
-                    SelectMethod="listaCategorias"
+                    SelectMethod="getCategoriasWS"
                     DataTextField="CategoriaNombre"
                     DataValueField="CategoriaID"
                     >

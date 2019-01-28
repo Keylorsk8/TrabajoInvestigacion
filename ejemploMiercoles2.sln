@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemploMiercoles2", "ejemploMiercoles2\ejemploMiercoles2.csproj", "{D1660911-C8A1-4298-AE99-0138B89C5CA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EEBDD98C-2D1C-49C9-AD04-DEADCF7A087E} = {EEBDD98C-2D1C-49C9-AD04-DEADCF7A087E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contexto", "Contexto\Contexto.csproj", "{0DAAA33B-7D18-455A-A4C0-751114D9013F}"
 EndProject

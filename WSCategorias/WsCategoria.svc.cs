@@ -9,8 +9,6 @@ using System.Text;
 
 namespace WSCategorias
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
-    // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class WsCategoria : ICategorias
     {
         public List<Categoria> getCategorias()
@@ -44,22 +42,45 @@ namespace WSCategorias
             }
         }
 
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
+        public bool insertCategoria(string nombre, string descripcion)
+        { 
+            SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ProductoContext"].ConnectionString);
+            SqlCommand query = new SqlCommand($"Insert into Categoria values {nombre},{descripcion}", cn);
+            try
+            {
+                cn.Open();
+                query.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e) { 
+                Console.WriteLine(e.Message);
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public bool updateCategoria(int id, string nombre, string descripcion)
         {
-            if (composite == null)
+            SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ProductoContext"].ConnectionString);
+            SqlCommand query = new SqlCommand($"Update Categoria set CategoriaNombre = {nombre},Descripcion = {descripcion} where CategoriaID = {id}", cn);
+            try
             {
-                throw new ArgumentNullException("composite");
+                cn.Open();
+                query.ExecuteNonQuery();
+                return true;
             }
-            if (composite.BoolValue)
+            catch (Exception e)
             {
-                composite.StringValue += "Suffix";
+                Console.WriteLine(e.Message);
+                return false;
             }
-            return composite;
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

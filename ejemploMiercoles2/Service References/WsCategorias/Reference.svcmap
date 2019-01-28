@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7dc108f8-8618-47ef-aa00-188ab5e4c929" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5859/WsCategoria.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsCategoria.xsd" MetadataType="Schema" ID="7dff9d92-454e-4ef4-a05d-ed580858de04" SourceId="1" SourceUrl="http://localhost:5859/WsCategoria.svc?xsd=xsd0" />
+    <MetadataFile FileName="WsCategoria1.xsd" MetadataType="Schema" ID="4d14c12e-7c7f-490c-b895-3a192bf0a3c6" SourceId="1" SourceUrl="http://localhost:5859/WsCategoria.svc?xsd=xsd1" />
+    <MetadataFile FileName="WsCategoria.disco" MetadataType="Disco" ID="aba09fff-a011-4792-a24b-d84157752c25" SourceId="1" SourceUrl="http://localhost:5859/WsCategoria.svc?disco" />
+    <MetadataFile FileName="WsCategoria2.xsd" MetadataType="Schema" ID="fbb44f6f-ec28-4479-adbf-76f421542b53" SourceId="1" SourceUrl="http://localhost:5859/WsCategoria.svc?xsd=xsd2" />
+    <MetadataFile FileName="WsCategoria.wsdl" MetadataType="Wsdl" ID="93dc0948-5183-45d0-92a5-fe3b5b8bec74" SourceId="1" SourceUrl="http://localhost:5859/WsCategoria.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

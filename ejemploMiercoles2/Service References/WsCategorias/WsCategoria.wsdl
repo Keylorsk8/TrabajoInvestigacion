@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WsCategoria" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5859/WsCategoria.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5859/WsCategoria.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5859/WsCategoria.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSCategorias" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICategorias_getCategorias_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategorias" />
+  </wsdl:message>
+  <wsdl:message name="ICategorias_getCategorias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategorias_insertCategoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertCategoria" />
+  </wsdl:message>
+  <wsdl:message name="ICategorias_insertCategoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategorias_updateCategoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategoria" />
+  </wsdl:message>
+  <wsdl:message name="ICategorias_updateCategoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICategorias">
+    <wsdl:operation name="getCategorias">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategorias/getCategorias" message="tns:ICategorias_getCategorias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategorias/getCategoriasResponse" message="tns:ICategorias_getCategorias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertCategoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategorias/insertCategoria" message="tns:ICategorias_insertCategoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategorias/insertCategoriaResponse" message="tns:ICategorias_insertCategoria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCategoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategorias/updateCategoria" message="tns:ICategorias_updateCategoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategorias/updateCategoriaResponse" message="tns:ICategorias_updateCategoria_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICategorias" type="tns:ICategorias">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCategorias">
+      <soap:operation soapAction="http://tempuri.org/ICategorias/getCategorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCategoria">
+      <soap:operation soapAction="http://tempuri.org/ICategorias/insertCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCategoria">
+      <soap:operation soapAction="http://tempuri.org/ICategorias/updateCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsCategoria">
+    <wsdl:port name="BasicHttpBinding_ICategorias" binding="tns:BasicHttpBinding_ICategorias">
+      <soap:address location="http://localhost:5859/WsCategoria.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

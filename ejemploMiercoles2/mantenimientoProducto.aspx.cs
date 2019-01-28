@@ -23,5 +23,46 @@ namespace ejemploMiercoles2
         {
             return CategoriaLN.ListaCategorias();
         }
+
+        public List<Categorias> getCategoriasWS()
+        {
+            List<Categorias> categorias = new List<Categorias>();
+            using (WsCategorias.CategoriasClient client = new WsCategorias.CategoriasClient())
+            {
+                Categorias cat;
+                var categoriasWS = client.getCategorias();
+                foreach (var v in categoriasWS)
+                {
+                    cat = new Categorias();
+                    cat.CategoriaID = v.Id;
+                    cat.CategoriaNombre = v.Nombre;
+                    cat.Descripcion = v.Descripcion;
+                    categorias.Add(cat);
+                }
+            }
+            return categorias;
+        }
+
+        public bool insertCategoria()
+        {
+            var nombre = "";
+            var descripcion = "";
+
+            using(WsCategorias.CategoriasClient client = new WsCategorias.CategoriasClient())
+            {
+                return client.insertCategoria(nombre, descripcion);
+            }
+        }
+
+        public bool updateCategoria()
+        {
+            int id = 0;
+            var nombre = "";
+            var descripcion = "";
+            using (WsCategorias.CategoriasClient client = new WsCategorias.CategoriasClient())
+            {
+                return client.updateCategoria(id,nombre, descripcion);
+            }
+        }
     }
 }
