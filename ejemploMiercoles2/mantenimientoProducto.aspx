@@ -3,12 +3,17 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
+    
+    <div class="container">
+        <div class="row">
+            <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
+        </div>
+    </div>        
 
+    <div class="row">
         <div class="col-lg-4 offset-lg-1">
             <!-- Registro -->
             <h2>Registro Productos</h2>
-            <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
             <div class="form-group row">
                 <asp:Label ID="Label1" runat="server" Text="Categoría"></asp:Label>
                 <asp:DropDownList ID="ddlCategoria" runat="server" 
@@ -88,8 +93,11 @@
                     Display="Dynamic"  ValidationGroup="registrar"
                     ></asp:RequiredFieldValidator>
             </div>
+            <asp:HiddenField ID="hProductoId" runat="server" Value=""/>
+
             <div class="form-group row">
                 <asp:Button ID="btnRegistrar"
+                    Onclick="btnRegistrar_Click"
                      CssClass="btn btn-primary" 
                     runat="server"  
                     ValidationGroup="registrar"
@@ -103,7 +111,15 @@
         <div class="col-lg-6 offset-lg-1">
             <!-- Listado -->
             <h2>Listado Productos</h2>
-
+            <asp:GridView ID="grvListado" runat="server" AutoGenerateColumns="False" CssClass="table table-hover"
+                AutoGenerateSelectButton="true" DataKeyNames="ProductoId"
+                OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
+                <Columns>
+                    <asp:BoundField DataField="ProductoNombre" HeaderText="Nombre"></asp:BoundField>
+                    <asp:BoundField DataField="PrecioUnitario" HeaderText="Precio"></asp:BoundField>
+                    <asp:BoundField DataField="Categorias.CategoriaNombre" HeaderText="Categoría"></asp:BoundField>
+                </Columns>
+            </asp:GridView>
             <!-- Listado -->
         </div>
 
