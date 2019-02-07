@@ -111,7 +111,7 @@
         <div class="col-lg-6 offset-lg-1">
             <!-- Listado -->
             <h2>Listado Productos</h2>
-            <asp:GridView ID="grvListado" runat="server" AutoGenerateColumns="False" CssClass="table table-hover"
+            <asp:GridView ID="grvListado" runat="server" AutoGenerateColumns="False" CssClass="table"
                 AutoGenerateSelectButton="true" DataKeyNames="ProductoId"
                 OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
                 <Columns>

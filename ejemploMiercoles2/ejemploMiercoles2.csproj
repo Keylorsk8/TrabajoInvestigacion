@@ -78,6 +78,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="carritoCompras.aspx" />
+    <Content Include="detalleProducto.aspx" />
+    <Content Include="listaProductos.aspx" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
@@ -169,12 +172,34 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="carritoCompras.aspx.cs">
+      <DependentUpon>carritoCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="carritoCompras.aspx.designer.cs">
+      <DependentUpon>carritoCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoLN\Carrito.cs" />
+    <Compile Include="detalleProducto.aspx.cs">
+      <DependentUpon>detalleProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalleProducto.aspx.designer.cs">
+      <DependentUpon>detalleProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaProductos.aspx.cs">
+      <DependentUpon>listaProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaProductos.aspx.designer.cs">
+      <DependentUpon>listaProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="mantenimientoProducto.aspx.cs">
       <DependentUpon>mantenimientoProducto.aspx</DependentUpon>

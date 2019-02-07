@@ -19,7 +19,10 @@
         <asp:Menu ID="Menu1" Orientation="Horizontal"
             runat="server"
              DataSourceID="SiteMapDataSource1"
-            CssClass="navbar navbar-expand-lg navbar-light bg-light"
+            CssClass="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark"
+          StaticMenuStyle-CssClass= "nav"
+          StaticSelectedStyle-CssClass="active"
+          DynamicMenuStyle-CssClass="dropdown-menu"
             Width="100%"
             >
             <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="20px" />

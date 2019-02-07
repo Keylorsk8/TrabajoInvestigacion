@@ -2,9 +2,15 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="" title=""  description="">
         <siteMapNode url="index.aspx" title="Inicio"  description="" />
-        <siteMapNode url="mantenimientoProducto.aspx" title="Productos"  description="" />
+        <siteMapNode title="Productos"  description="" >
+          <siteMapNode url="listaProductos.aspx" title="Lista Productos"></siteMapNode>
+          <siteMapNode url="mantenimientoProducto.aspx" title="Mantenimiento de Productos"></siteMapNode>
+        </siteMapNode>
        <siteMapNode url="" title="Categorías"  description="" />
-      <siteMapNode url="" title="Ordenes"  description="" />
+      <siteMapNode url="" title="Ordenes"  description="">
+        <siteMapNode url="carritoCompras.aspx" title="Carrito"></siteMapNode>
+        <siteMapNode title="Lista Ordenes"></siteMapNode>
+      </siteMapNode>
       <siteMapNode url="" title="Reportes"  description="">
         <siteMapNode url="" title="Reporte 1"  description="" />
         <siteMapNode url="" title="Reporte 2"  description="" />
